@@ -1,0 +1,5 @@
+question|a|b|c|d|answer
+How can you output a poem with Python using just two words?|print poem|import this|for poem|print this|b
+Where did the name Python come from?|The ball python snake|Python of Aenus (a student of Plato)|A ton of pie|Monty Python|d
+Which character is not used in Python?|The semicolon - ;|The pound sign - #|The hyphen - -|The period - .|a
+Who designed and developed the Python language?|Dennis Ritchie|Grace Hopper|Guido van Rossum|Brendan Eich|c
