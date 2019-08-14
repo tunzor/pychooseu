@@ -19,7 +19,7 @@ for f in files:
     current_file = open(f, 'r')
     current_file.readline()  # skip header row; remove if no header row
     for row in current_file:
-        questions_mix.append(row)
+        questions_mix.append({'line':row, 'file':f})
         inputs = row.split("|")
 
 # randomize question order in list
@@ -50,11 +50,11 @@ start_time = datetime.datetime.now()
 
 for i in range(number_of_questions):
     question = questions_mix[i]
-    parts = question.split("|")
-    print("Question {}/{}\n{}\nA: {}\nB: {}\nC: {}\nD: {}"
-          .format(i + 1, number_of_questions, parts[0], parts[1], parts[2], parts[3], parts[4]))
-    output_text += "Question {}/{}\n{}\nA: {}\nB: {}\nC: {}\nD: {}"\
-        .format(i + 1, number_of_questions, parts[0], parts[1], parts[2], parts[3], parts[4])
+    parts = question['line'].split("|")
+    print("Question {}/{} -- from: {}\n{}\nA: {}\nB: {}\nC: {}\nD: {}"
+          .format(i + 1, number_of_questions, question['file'], parts[0], parts[1], parts[2], parts[3], parts[4]))
+    output_text += "Question {}/{} -- from: {}\n{}\nA: {}\nB: {}\nC: {}\nD: {}"\
+        .format(i + 1, number_of_questions, question['file'], parts[0], parts[1], parts[2], parts[3], parts[4])
 
     correct_answer = str(parts[5][0]).upper()  # answer includes \n character; substring just the first character
     answer = ''
