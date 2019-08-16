@@ -9,13 +9,14 @@
 
 ## Usage 
 1. Create or use folder (`csvdata/` by default) for question data  
-*(If using new directory, update `questions_dir` variable)*
+*(If using new directory, update `questions_dir` list variable)*
 2. Add `csv` files with question data (**pipe `|` separated**) in the form:  
 `question | option A | option B | option C | option D | answer (a-d)`
-3. Run `pychooseu.py`
-4. Choose how many questions you want to display (hit `enter` to display all)
-5. Enter `a-d` to answer or `q` to quit
-6. (Optional) View results output file in `output` directory
+3. (Optional) To use questions from certain files only, update the `keywords` list variable with keywords from the files you want to use
+4. Run `pychooseu.py`
+5. Choose how many questions you want to display (hit `enter` to display all)
+6. Enter `a-d` to answer or `q` to quit
+7. (Optional) View results output file in `output` directory
 
 ### Docker Usage
 1. Do a docker build with the Dockerfile  

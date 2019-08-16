@@ -3,11 +3,20 @@ import os
 import datetime
 
 files = []
+keywords = []  # keywords to search for in filenames; leave empty to use all files
 questions_dir = 'csvdata/'  # directory containing questions in csv
+
 # grab all csv files from questions_dir
 for f in os.listdir(questions_dir):
     if '.csv' in f:
-        files.append(questions_dir+f)
+        if len(keywords) > 0:
+            for k in keywords:
+                if k in f:
+                    files.append(questions_dir+f)
+        else:
+            files.append(questions_dir+f)
+
+files = set(files)  # remove duplicate filenames caused by filenames with multiple keywords
 
 # make output directory
 if not os.path.exists('output'):
